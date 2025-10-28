@@ -1,0 +1,100 @@
+/********** Base styles **********/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: cursive;
+  background-color: white;
+  margin: 0;
+  padding: 0px 10px 0px 0px;  /* top right bottom left */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Simple Responsive Framework. */
+.row {
+  width: 100%;
+  color: black;
+  padding: 10px 15px 20px 25px
+}
+
+/* Each menu box label */
+.box_label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid black;
+  padding: 5px 20px;
+  font-weight: bold;
+}
+
+/* Specific colors for each section */
+#chicken .box_label {
+  background-color: pink;
+}
+
+#beef .box_label {
+  background-color: red;
+  color: white;
+}
+
+#sushi .box_label {
+  background-color: yellow;
+}
+
+/* menu boxes */
+.menu_box_container {
+  background-color: #808080;  /* medium gray */
+  border: 1px solid black;
+  margin: 10px;
+  position: relative;
+  padding: 40px 15px 15px 15px; /* top padding to prevent overlap w/box label */
+  float: left;
+  width: 100%
+}
+
+/********** Large devices only **********/
+@media (min-width: 992px) {
+  .col-lg-4, .col-lg-6 {
+    margin-top: 10px;
+    float: left;
+    border: 1px solid green;
+  }
+  .col-lg-4 {
+	/* I found if I set to 33.33%, I could never get 3 boxes in widest row?? */
+    width: 31%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+}
+
+/********** Medium devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-md-6, .col-md-12 {
+    margin-top: 10px;
+    border: 1px solid green;
+  }
+  .col-md-6 {
+    float: left;
+    width: 47%; /* 50% doesnt work..*/
+  }
+  .col-md-12 {
+    float: left;
+    width: 97%; /* 100% works but its widely than 2x the above.. */
+}
+
+/********** Small devices only **********/
+@media (max-width: 767px) {
+  .col-sm-12{
+    margin-top: 10px;
+    float: left;
+    border: 1px solid green;
+    width: 100%;
+}
